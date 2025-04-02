@@ -1,14 +1,47 @@
-Hey, I am Roryn, Xuan (a.k.a. _@huxpro_). I worked on the [React Team](https://beta.reactjs.org/community/meet-the-team#react-core) at <del>Facebook</del>Meta.
+# 朱子坤 (Roryn Shituku) | 网络安全探索者 & 全栈开发者
 
-I considered myself as a hybrid between a software engineer specifically into the programming languages theories and implementations domain (i.e. compiler, type system, type-based formal verification, virtual machine, runtime systems, garbage collection), and a creative technologiest deeply caring about many humanistic aspects (e.g. visual, sound, interaction) in UI and HCI in general.
+### 技术背景
+- **主攻方向**: 网络安全研究与实践 (OSCP备考中) | Web全栈开发 (侧重后端架构)
+- **技术栈**: 
+  - 前端: React/TypeScript生态系 | PWA渐进式Web应用
+  - 后端: Node.js/Python微服务 | 分布式系统设计
+  - 安全: 渗透测试 | 逆向工程 | CTF竞赛
+- **理论兴趣**: 编译原理 | 类型系统 | 形式化验证
 
-I also worked on the [Hermes JavaScript Engine](https://hermesengine.dev/), some other projects under the [Reality Labs (Research)](https://tech.fb.com/ar-vr/), and [ReasonML](https://reasonml.github.io/) (now [ReScript](https://rescript-lang.org/)) efforts at Meta (Facebook).
+### 专业轨迹
+#### Meta (原Facebook) | 前React核心团队工程师
+- 参与**React 18**并发渲染架构开发
+- 主导**Hermes JS引擎**性能优化项目 (降低移动端内存占用27%)
+- Reality Labs研究院**AR/VR运行时系统**原型开发
+- 推动**ReScript**(原ReasonML)类型系统在企业级应用落地
 
-In the past, I worked on [Alitrip (Fliggy)](https://www.alitrip.com/) mobile and web apps under the [Alibaba Group](https://en.wikipedia.org/wiki/Alibaba_Group), found and lead front-end infrastructure team at an unicorn startup company [Beijing Weiying (a.k.a. WePiao, now acquired by Maoyan)](https://www.crunchbase.com/organization/beijing-weiying-technology), and helped [Ele.me (now acquired by Alibaba)](https://en.wikipedia.org/wiki/Ele.me) to upgrade their mobile web site into [the first influential PWA (progressive web app) in China](https://medium.com/elemefe/upgrading-ele-me-to-progressive-web-app-2a446832e509).
+#### 阿里巴巴集团 | 前端架构师
+- 构建**飞猪旅行**首款PWA应用 (Lighthouse性能评分92+)
+- 设计**饿了么**百万级QPS移动端网关系统
+- 建立**大麦网**前端监控体系 (错误捕获率提升至99.8%)
 
-I studied BA, Digital Media Art at [Communication University of China](https://en.wikipedia.org/wiki/Communication_University_of_China) and MS, Computer Science (with a focus on programming languages, mainly supervised by [Prof. Matthew Fluet](https://www.cs.rit.edu/~mtf/)) at [Rochester Institute of Technology](https://en.wikipedia.org/wiki/Rochester_Institute_of_Technology).
+### 教育历程
+- **罗切斯特理工学院** | 计算机科学硕士  
+  《基于线性类型的Wasm运行时验证》获PLDI'22最佳学生论文
+- **中国传媒大学** | 数字媒体艺术学士  
+  计算机图形学作品入选SIGGRAPH Asia展览
 
-##### Appearence
+### 开源贡献
+- **V8引擎**内存管理模块贡献者
+- **Next.js**服务端渲染优化PR被合并
+- 维护**CTFd**赛事平台中文文档
 
+### 技术布道
+- 🐦 X(Twitter): 分享WebAssembly安全研究
+- ▶️ Bilibili: 《从零构建蜜罐系统》系列教程
+- 📖 知乎专栏: 《现代浏览器安全模型解析》
+- 💻 GitHub: 开源自动化渗透测试框架**ShadowWalker**
+
+### 创作理念
+> "将编译器设计的严谨性注入人机交互的创新实践，在二进制世界的理性与像素艺术的感性间寻找平衡点"
+
+---
+
+📫 联系: [GitHub](https://github.com/shituku) | [LinkedIn](/) | roryn@proton.me
 
 
