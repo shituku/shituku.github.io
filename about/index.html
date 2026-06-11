@@ -184,6 +184,42 @@ figure.highlight td.code pre {
                 
     
             
+                
+                    <script data-swup-reload-script>
+// 相册：纯 show/hide，无 JSON 解析，无动态 HTML 生成
+(function() {
+  window.showGalleryAlbum = function(index) {
+    var grid = document.getElementById('albumGrid');
+    var header = document.querySelector('.gallery-header');
+    if (grid) grid.style.display = 'none';
+    if (header) header.style.display = 'none';
+    // 隐藏所有相册照片区
+    var sections = document.querySelectorAll('.album-photos-section');
+    for (var i = 0; i < sections.length; i++) {
+      sections[i].style.display = 'none';
+    }
+    // 显示目标相册
+    var target = document.getElementById('gallery-album-' + index);
+    if (target) target.style.display = '';
+    window.scrollTo({top: 0, behavior: 'smooth'});
+  };
+  window.hideGalleryAlbum = function() {
+    var grid = document.getElementById('albumGrid');
+    var header = document.querySelector('.gallery-header');
+    if (grid) grid.style.display = '';
+    if (header) header.style.display = '';
+    var sections = document.querySelectorAll('.album-photos-section');
+    for (var i = 0; i < sections.length; i++) {
+      sections[i].style.display = 'none';
+    }
+    window.scrollTo({top: 0, behavior: 'smooth'});
+  };
+})();
+</script>
+
+                
+    
+            
     
 
     
@@ -238,6 +274,8 @@ figure.highlight td.code pre {
 </div>
 
 <main class="page-container" id="swup">
+
+	
 
 	
 
@@ -537,7 +575,7 @@ figure.highlight td.code pre {
 <li>其他工具：Git, Docker</li>
 </ul>
 <h2 id="📫-联系方式"><a href="#📫-联系方式" class="headerlink" title="📫 联系方式"></a>📫 联系方式</h2><ul>
-<li>📧 Email: <a class="link"   href="mailto:&#x73;&#104;&#x69;&#x74;&#x75;&#107;&#117;&#x2e;&#x73;&#117;&#x40;&#x6f;&#x75;&#116;&#108;&#111;&#x6f;&#107;&#x2e;&#99;&#x6f;&#109;" >shituku.su@outlook.com<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></li>
+<li>📧 Email: <a class="link"   href="mailto:&#115;&#x68;&#105;&#x74;&#x75;&#107;&#117;&#x2e;&#x73;&#117;&#x40;&#111;&#x75;&#x74;&#108;&#x6f;&#111;&#107;&#x2e;&#99;&#111;&#109;" >shituku.su@outlook.com<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></li>
 <li>🌐 GitHub: <a class="link"   target="_blank" rel="noopener" href="https://github.com/shituku" >shituku<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></li>
 <li>🏠 Blog: <a href="https://3322888.xyz/">tsuki no shizuku</a></li>
 </ul>

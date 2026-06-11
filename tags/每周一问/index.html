@@ -182,6 +182,42 @@ figure.highlight td.code pre {
                 
     
             
+                
+                    <script data-swup-reload-script>
+// 相册：纯 show/hide，无 JSON 解析，无动态 HTML 生成
+(function() {
+  window.showGalleryAlbum = function(index) {
+    var grid = document.getElementById('albumGrid');
+    var header = document.querySelector('.gallery-header');
+    if (grid) grid.style.display = 'none';
+    if (header) header.style.display = 'none';
+    // 隐藏所有相册照片区
+    var sections = document.querySelectorAll('.album-photos-section');
+    for (var i = 0; i < sections.length; i++) {
+      sections[i].style.display = 'none';
+    }
+    // 显示目标相册
+    var target = document.getElementById('gallery-album-' + index);
+    if (target) target.style.display = '';
+    window.scrollTo({top: 0, behavior: 'smooth'});
+  };
+  window.hideGalleryAlbum = function() {
+    var grid = document.getElementById('albumGrid');
+    var header = document.querySelector('.gallery-header');
+    if (grid) grid.style.display = '';
+    if (header) header.style.display = '';
+    var sections = document.querySelectorAll('.album-photos-section');
+    for (var i = 0; i < sections.length; i++) {
+      sections[i].style.display = 'none';
+    }
+    window.scrollTo({top: 0, behavior: 'smooth'});
+  };
+})();
+</script>
+
+                
+    
+            
     
 
     
@@ -236,6 +272,8 @@ figure.highlight td.code pre {
 </div>
 
 <main class="page-container" id="swup">
+
+	
 
 	
 

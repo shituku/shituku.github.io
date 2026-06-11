@@ -186,6 +186,42 @@ figure.highlight td.code pre {
                 
     
             
+                
+                    <script data-swup-reload-script>
+// 相册：纯 show/hide，无 JSON 解析，无动态 HTML 生成
+(function() {
+  window.showGalleryAlbum = function(index) {
+    var grid = document.getElementById('albumGrid');
+    var header = document.querySelector('.gallery-header');
+    if (grid) grid.style.display = 'none';
+    if (header) header.style.display = 'none';
+    // 隐藏所有相册照片区
+    var sections = document.querySelectorAll('.album-photos-section');
+    for (var i = 0; i < sections.length; i++) {
+      sections[i].style.display = 'none';
+    }
+    // 显示目标相册
+    var target = document.getElementById('gallery-album-' + index);
+    if (target) target.style.display = '';
+    window.scrollTo({top: 0, behavior: 'smooth'});
+  };
+  window.hideGalleryAlbum = function() {
+    var grid = document.getElementById('albumGrid');
+    var header = document.querySelector('.gallery-header');
+    if (grid) grid.style.display = '';
+    if (header) header.style.display = '';
+    var sections = document.querySelectorAll('.album-photos-section');
+    for (var i = 0; i < sections.length; i++) {
+      sections[i].style.display = 'none';
+    }
+    window.scrollTo({top: 0, behavior: 'smooth'});
+  };
+})();
+</script>
+
+                
+    
+            
     
 
     
@@ -240,6 +276,8 @@ figure.highlight td.code pre {
 </div>
 
 <main class="page-container" id="swup">
+
+	
 
 	
 
@@ -507,7 +545,7 @@ figure.highlight td.code pre {
 		<div class="article-title relative w-full">
 			
 			<div class="w-full flex items-center pt-6 justify-start">
-				<h1 class="article-title-regular text-second-text-color tracking-tight text-4xl md:text-6xl font-semibold px-2 sm:px-6 md:px-8 py-3">Macmini4</h1>
+				<h1 class="article-title-regular text-second-text-color tracking-tight text-2xl md:text-4xl font-semibold px-2 sm:px-6 md:px-8 py-3">Macmini4</h1>
 			</div>
 			
 		</div>
@@ -614,7 +652,7 @@ figure.highlight td.code pre {
                      data-src="/2025/12/21/Macmini4/IMG_2363.JPG"
                       class="" title="准备线材"
                 >
-<p>4、在Parsec软件中设置连接的设置Setting- Host-Enable，macOS给予三种权限<br>5、Mac OS中设置锁屏不休眠以及开机自动登录账号<br>6、回到笔记本上面可以看到Parsec中在同一个局域网中出现mac设备，当然要是没有的话，先去查路由表找到dynamic活动的IP地址，这里要注意的是普遍Wi-Fi中会有2.4G和5G两种频率的信号，记得在mac里Wi-Fi关闭自动连接任意一个频率，确保是连在同一个频率下就行<br>7、arp -a 扫出IP地址，ssh先去连接：ssh <a class="link"   href="mailto:&#122;&#x68;&#x75;&#x7a;&#105;&#107;&#x75;&#x6e;&#64;&#49;&#x39;&#50;&#46;&#x31;&#54;&#x38;&#x2e;&#49;&#46;&#49;&#49;" >zhuzikun@192.168.1.11<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a> 输入密码成功连接到Mac系统<br>8、打开Parsec一般会自动reload，也可以手动，Connect连接上，修改下屏幕分辨率为1920*1080铺满整个屏幕<br>  后续优化可能就是申请IPv4绑定上域名实现远程连接，不过这个使用场景肯定是要回归显示器的，不然发挥不了这台mac的实力。这样只是解决了macmini在外出使用没有显示器的一些办法。<br>  当然你也还有其他选择比如：购买便捷显示屏（500左右）、支持Dp-in的平板、iPad镜像或则随航功能，但是我尝试过用不了可能是ios14版本太低了这个问题解决不了<br>  好的以上就是我第一次购买macmini的一些帮助和建议</p>
+<p>4、在Parsec软件中设置连接的设置Setting- Host-Enable，macOS给予三种权限<br>5、Mac OS中设置锁屏不休眠以及开机自动登录账号<br>6、回到笔记本上面可以看到Parsec中在同一个局域网中出现mac设备，当然要是没有的话，先去查路由表找到dynamic活动的IP地址，这里要注意的是普遍Wi-Fi中会有2.4G和5G两种频率的信号，记得在mac里Wi-Fi关闭自动连接任意一个频率，确保是连在同一个频率下就行<br>7、arp -a 扫出IP地址，ssh先去连接：ssh <a class="link"   href="mailto:&#x7a;&#x68;&#x75;&#x7a;&#x69;&#x6b;&#117;&#110;&#x40;&#x31;&#x39;&#50;&#46;&#49;&#54;&#x38;&#x2e;&#49;&#x2e;&#49;&#49;" >zhuzikun@192.168.1.11<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a> 输入密码成功连接到Mac系统<br>8、打开Parsec一般会自动reload，也可以手动，Connect连接上，修改下屏幕分辨率为1920*1080铺满整个屏幕<br>  后续优化可能就是申请IPv4绑定上域名实现远程连接，不过这个使用场景肯定是要回归显示器的，不然发挥不了这台mac的实力。这样只是解决了macmini在外出使用没有显示器的一些办法。<br>  当然你也还有其他选择比如：购买便捷显示屏（500左右）、支持Dp-in的平板、iPad镜像或则随航功能，但是我尝试过用不了可能是ios14版本太低了这个问题解决不了<br>  好的以上就是我第一次购买macmini的一些帮助和建议</p>
 <img  
                      lazyload
                      src="/images/loading.svg"

@@ -184,6 +184,42 @@ figure.highlight td.code pre {
                 
     
             
+                
+                    <script data-swup-reload-script>
+// 相册：纯 show/hide，无 JSON 解析，无动态 HTML 生成
+(function() {
+  window.showGalleryAlbum = function(index) {
+    var grid = document.getElementById('albumGrid');
+    var header = document.querySelector('.gallery-header');
+    if (grid) grid.style.display = 'none';
+    if (header) header.style.display = 'none';
+    // 隐藏所有相册照片区
+    var sections = document.querySelectorAll('.album-photos-section');
+    for (var i = 0; i < sections.length; i++) {
+      sections[i].style.display = 'none';
+    }
+    // 显示目标相册
+    var target = document.getElementById('gallery-album-' + index);
+    if (target) target.style.display = '';
+    window.scrollTo({top: 0, behavior: 'smooth'});
+  };
+  window.hideGalleryAlbum = function() {
+    var grid = document.getElementById('albumGrid');
+    var header = document.querySelector('.gallery-header');
+    if (grid) grid.style.display = '';
+    if (header) header.style.display = '';
+    var sections = document.querySelectorAll('.album-photos-section');
+    for (var i = 0; i < sections.length; i++) {
+      sections[i].style.display = 'none';
+    }
+    window.scrollTo({top: 0, behavior: 'smooth'});
+  };
+})();
+</script>
+
+                
+    
+            
     
 
     
@@ -238,6 +274,14 @@ figure.highlight td.code pre {
 </div>
 
 <main class="page-container" id="swup">
+
+	
+	<!-- 相册背景（放在 main-content-body 外，避免 CSS transform 影响 fixed 定位） -->
+	<div class="gallery-body-bg" style="position:fixed;inset:0;z-index:-1;pointer-events:none" aria-hidden="true">
+		<img src="/uploads/gallery/小浮.jpg" alt="" style="width:100%;height:100%;object-fit:cover;filter:blur(8px);transform:scale(1.1)">
+		<div style="position:absolute;inset:0;background:var(--background-color);opacity:0.85"></div>
+	</div>
+	
 
 	
 
@@ -500,23 +544,246 @@ figure.highlight td.code pre {
 
 			<div class="main-content">
 				
+<div class="gallery-page min-h-screen relative">
+  <!-- 顶部标题 -->
+  <div class="gallery-header text-center py-10 px-4 relative">
+    <h1 class="text-3xl md:text-4xl font-bold text-primary mb-2">
+      <i class="fa-regular fa-images mr-2"></i>相册
+    </h1>
+    <p class="text-sm md:text-base text-third-text-color max-w-md mx-auto">
+      我的相册
+    </p>
+  </div>
 
+  <div class="gallery-content max-w-5xl mx-auto px-4 md:px-6 pb-20 relative">
+    
+    <!-- 相册卡片网格 -->
+    <div class="gallery-albums-grid grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5" id="albumGrid">
+      
+      <div class="album-card group bg-second-background-color/90 backdrop-blur-sm rounded-2xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer"
+           onclick="window.showGalleryAlbum(0)">
+        <!-- 封面 -->
+        <div class="album-cover relative aspect-square overflow-hidden">
+          
+          <img src="/uploads/gallery/agc_v9.9_r420260107_162450253.jpg"
+               alt="随拍集"
+               class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+               loading="lazy">
+          
+          <span class="absolute top-2 right-2 px-2 py-0.5 rounded-full bg-black/50 backdrop-blur-sm text-white text-xs">
+            <i class="fa-regular fa-image mr-1"></i>7
+          </span>
+          <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+            <span class="text-white text-sm font-medium flex items-center gap-1">
+              <i class="fa-solid fa-magnifying-glass"></i> 查看
+            </span>
+          </div>
+        </div>
+        <div class="album-info p-3 md:p-4">
+          <h2 class="text-sm md:text-base font-semibold text-second-text-color group-hover:text-primary transition-colors truncate">随拍集</h2>
+          <p class="text-xs text-third-text-color/70 leading-relaxed mt-1 line-clamp-2">手机镜头下的生活碎片 · 不定期更新</p>
+        </div>
+      </div>
+      
+      <div class="album-card group bg-second-background-color/90 backdrop-blur-sm rounded-2xl overflow-hidden shadow-md hover:shadow-lg transition-all duration-300 hover:-translate-y-1 cursor-pointer"
+           onclick="window.showGalleryAlbum(1)">
+        <!-- 封面 -->
+        <div class="album-cover relative aspect-square overflow-hidden">
+          
+          <img src="/uploads/gallery/小浮.jpg"
+               alt="收藏"
+               class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+               loading="lazy">
+          
+          <span class="absolute top-2 right-2 px-2 py-0.5 rounded-full bg-black/50 backdrop-blur-sm text-white text-xs">
+            <i class="fa-regular fa-image mr-1"></i>3
+          </span>
+          <div class="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+            <span class="text-white text-sm font-medium flex items-center gap-1">
+              <i class="fa-solid fa-magnifying-glass"></i> 查看
+            </span>
+          </div>
+        </div>
+        <div class="album-info p-3 md:p-4">
+          <h2 class="text-sm md:text-base font-semibold text-second-text-color group-hover:text-primary transition-colors truncate">收藏</h2>
+          <p class="text-xs text-third-text-color/70 leading-relaxed mt-1 line-clamp-2">喜欢的壁纸与插画</p>
+        </div>
+      </div>
+      
+    </div>
 
-<div class="py-8 sm:py-0">
-	<h1 class="page-title-header">
-		相册
-	</h1>
+    <!-- 每个相册的照片区（预渲染，默认隐藏） -->
+    
+    <div class="album-photos-section" id="gallery-album-0" style="display:none">
+      <button onclick="window.hideGalleryAlbum()" class="flex items-center gap-2 text-second-text-color hover:text-primary transition-colors mb-8 group">
+        <i class="fa-solid fa-arrow-left group-hover:-translate-x-1 transition-transform"></i>
+        <span class="text-lg font-medium">返回相册列表</span>
+      </button>
+      <div class="mb-8">
+        <h2 class="text-3xl font-bold text-second-text-color mb-2 flex items-center gap-3">
+          <i class="fa-regular fa-folder-open text-primary"></i>随拍集
+        </h2>
+        <p class="text-third-text-color mb-4">手机镜头下的生活碎片 · 不定期更新</p>
+        <span class="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-sm">
+          <i class="fa-regular fa-image mr-1"></i>7 张照片
+        </span>
+      </div>
+      <div class="photos-grid">
+        
+        <div class="photo-item group">
+          <img src="/uploads/gallery/agc_v9.9_r420250803_090746757.jpg" alt="街角" loading="lazy">
+          <div class="photo-overlay">
+            <p class="text-white font-semibold text-sm">街角</p>
+            
+          </div>
+        </div>
+        
+        <div class="photo-item group">
+          <img src="/uploads/gallery/agc_v9.9_r420251006_002926797.jpg" alt="黄昏" loading="lazy">
+          <div class="photo-overlay">
+            <p class="text-white font-semibold text-sm">黄昏</p>
+            
+          </div>
+        </div>
+        
+        <div class="photo-item group">
+          <img src="/uploads/gallery/agc_v9.9_r420251006_010156745.jpg" alt="夜色" loading="lazy">
+          <div class="photo-overlay">
+            <p class="text-white font-semibold text-sm">夜色</p>
+            
+          </div>
+        </div>
+        
+        <div class="photo-item group">
+          <img src="/uploads/gallery/agc_v9.9_r420260107_135253718.jpg" alt="冬日" loading="lazy">
+          <div class="photo-overlay">
+            <p class="text-white font-semibold text-sm">冬日</p>
+            
+          </div>
+        </div>
+        
+        <div class="photo-item group">
+          <img src="/uploads/gallery/agc_v9.9_r420260107_135322746.jpg" alt="午后" loading="lazy">
+          <div class="photo-overlay">
+            <p class="text-white font-semibold text-sm">午后</p>
+            
+          </div>
+        </div>
+        
+        <div class="photo-item group">
+          <img src="/uploads/gallery/agc_v9.9_r420260107_162450253.jpg" alt="傍晚" loading="lazy">
+          <div class="photo-overlay">
+            <p class="text-white font-semibold text-sm">傍晚</p>
+            
+          </div>
+        </div>
+        
+        <div class="photo-item group">
+          <img src="/uploads/gallery/agc_v9.9_r420260507_190014535.jpg" alt="初夏" loading="lazy">
+          <div class="photo-overlay">
+            <p class="text-white font-semibold text-sm">初夏</p>
+            
+          </div>
+        </div>
+        
+        
+      </div>
+    </div>
+    
+    <div class="album-photos-section" id="gallery-album-1" style="display:none">
+      <button onclick="window.hideGalleryAlbum()" class="flex items-center gap-2 text-second-text-color hover:text-primary transition-colors mb-8 group">
+        <i class="fa-solid fa-arrow-left group-hover:-translate-x-1 transition-transform"></i>
+        <span class="text-lg font-medium">返回相册列表</span>
+      </button>
+      <div class="mb-8">
+        <h2 class="text-3xl font-bold text-second-text-color mb-2 flex items-center gap-3">
+          <i class="fa-regular fa-folder-open text-primary"></i>收藏
+        </h2>
+        <p class="text-third-text-color mb-4">喜欢的壁纸与插画</p>
+        <span class="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-sm">
+          <i class="fa-regular fa-image mr-1"></i>3 张照片
+        </span>
+      </div>
+      <div class="photos-grid">
+        
+        <div class="photo-item group">
+          <img src="/uploads/gallery/【哲风壁纸】二次元少女-动漫插画.png" alt="二次元少女" loading="lazy">
+          <div class="photo-overlay">
+            <p class="text-white font-semibold text-sm">二次元少女</p>
+            
+          </div>
+        </div>
+        
+        <div class="photo-item group">
+          <img src="/uploads/gallery/【哲风壁纸】双马尾-对话框-小猫.png" alt="双马尾小猫" loading="lazy">
+          <div class="photo-overlay">
+            <p class="text-white font-semibold text-sm">双马尾小猫</p>
+            
+          </div>
+        </div>
+        
+        <div class="photo-item group">
+          <img src="/uploads/gallery/小浮.jpg" alt="小浮" loading="lazy">
+          <div class="photo-overlay">
+            <p class="text-white font-semibold text-sm">小浮</p>
+            
+          </div>
+        </div>
+        
+        
+      </div>
+    </div>
+    
 
-	<div class="min-h-screen!" id="masonry-container" data-masonry-data-url="/masonry/data.json"></div>
-
-	<div class="masonry-loadmore is-hidden" id="masonry-loadmore" aria-live="polite">
-		<span class="masonry-spinner" aria-hidden="true"></span>
-		<span class="masonry-loadmore-text">照片加载中...</span>
-	</div>
-
-	<div id="masonry-sentinel" aria-hidden="true"></div>
+    
+  </div>
 </div>
 
+<style>
+.photos-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+}
+@media (min-width: 768px) {
+  .photos-grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (min-width: 1024px) {
+  .photos-grid { grid-template-columns: repeat(4, 1fr); }
+}
+.photo-item {
+  position: relative;
+  aspect-ratio: 1 / 1;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  cursor: pointer;
+  background: var(--second-background-color);
+}
+.photo-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+.photo-item:hover img {
+  transform: scale(1.08);
+}
+.photo-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1rem;
+  border-radius: 0.75rem;
+}
+.photo-item:hover .photo-overlay {
+  opacity: 1;
+}
+</style>
 
 			</div>
 
