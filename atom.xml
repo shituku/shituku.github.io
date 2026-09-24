@@ -10,7 +10,7 @@
   <rights>All rights reserved 2026, Rory</rights>
   <subtitle>但行好事，莫問前程</subtitle>
   <title>Roryn blog</title>
-  <updated>2025-12-21T19:11:21.830Z</updated>
+  <updated>2026-09-24T13:11:39.000Z</updated>
   <entry>
     <author>
       <name>Rory</name>
@@ -28,7 +28,7 @@
       <![CDATA[<h3 id="随航-iPad：Mac-mini-iPad-移动工作流"><a href="#随航-iPad：Mac-mini-iPad-移动工作流" class="headerlink" title="随航 iPad：Mac mini + iPad 移动工作流"></a>随航]]>
     </summary>
     <title>Macmini+iPad无感随航进阶使用教程(终极版)</title>
-    <updated>2025-12-21T19:11:21.830Z</updated>
+    <updated>2026-09-24T13:11:39.000Z</updated>
   </entry>
   <entry>
     <author>
@@ -38,7 +38,7 @@
     <category term="电子设备" scheme="https://3322888.xyz/tags/%E7%94%B5%E5%AD%90%E8%AE%BE%E5%A4%87/"/>
     <category term="MacOS" scheme="https://3322888.xyz/tags/MacOS/"/>
     <content>
-      <![CDATA[<h2 id="Welcome-Mac-！"><a href="#Welcome-Mac-！" class="headerlink" title="Welcome Mac ！"></a>Welcome Mac ！</h2><p>在拼多多V3会员下成功以2999RMB拿下这个小玩具，太小巧了，往桌面一放就是一个小摆件。<br>但是我现在手上是没有显示屏只能用笔记本来替代，为了解决这个问题我就开启mac的第一次折腾：<br> 现在实现的场景就是：macmini在统一局域网下我的windows笔记本可以通过parsec软件直接做到从开机到连接笔记本实现无感连接，在笔记本上面直接就是双系统美滋滋～<br> <img                       lazyload                     src="/images/loading.svg"                     data-src="/2025/12/21/Macmini4/IMG20251220144026.jpg"                      class="" title="Parsec连接"                ><br>这里简单讲解下实现的步骤：<br>1、在Windows和Mac mini安装Parsec(下载地址 <a class="link"   href="https://parsec.app),这里直接用邮箱注册但是记得登录的时候要再次用邮箱去验证登录设备/" >https://parsec.app)，这里直接用邮箱注册但是记得登录的时候要再次用邮箱去验证登录设备<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a><br>2、前期应该准备 视频采集卡 以及 HDMI线 为初步登录账户和安装软件做准备<br>3、笔记本端用OBS去收集mac的屏幕，准备前面的工作</p><img                       lazyload                     src="/images/loading.svg"                     data-src="/2025/12/21/Macmini4/IMG_2363.JPG"                      class="" title="准备线材"                ><p>4、在Parsec软件中设置连接的设置Setting- Host-Enable，macOS给予三种权限<br>5、Mac OS中设置锁屏不休眠以及开机自动登录账号<br>6、回到笔记本上面可以看到Parsec中在同一个局域网中出现mac设备，当然要是没有的话，先去查路由表找到dynamic活动的IP地址，这里要注意的是普遍Wi-Fi中会有2.4G和5G两种频率的信号，记得在mac里Wi-Fi关闭自动连接任意一个频率，确保是连在同一个频率下就行<br>7、arp -a 扫出IP地址，ssh先去连接：ssh <a class="link"   href="mailto:&#122;&#x68;&#117;&#122;&#105;&#107;&#x75;&#x6e;&#64;&#x31;&#57;&#x32;&#x2e;&#x31;&#x36;&#56;&#x2e;&#x31;&#x2e;&#x31;&#49;" >zhuzikun@192.168.1.11<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a> 输入密码成功连接到Mac系统<br>8、打开Parsec一般会自动reload，也可以手动，Connect连接上，修改下屏幕分辨率为1920*1080铺满整个屏幕<br>  后续优化可能就是申请IPv4绑定上域名实现远程连接，不过这个使用场景肯定是要回归显示器的，不然发挥不了这台mac的实力。这样只是解决了macmini在外出使用没有显示器的一些办法。<br>  当然你也还有其他选择比如：购买便捷显示屏（500左右）、支持Dp-in的平板、iPad镜像或则随航功能，但是我尝试过用不了可能是ios14版本太低了这个问题解决不了<br>  好的以上就是我第一次购买macmini的一些帮助和建议</p><img                       lazyload                     src="/images/loading.svg"                     data-src="/2025/12/21/Macmini4/IMG_2367.JPG"                      class="" title="耳机联通"                ><img                       lazyload                     src="/images/loading.svg"                     data-src="/2025/12/21/Macmini4/IMG_2368.JPG"                      class="" title="娱乐"                >]]>
+      <![CDATA[<h2 id="Welcome-Mac-！"><a href="#Welcome-Mac-！" class="headerlink" title="Welcome Mac ！"></a>Welcome Mac ！</h2><p>在拼多多V3会员下成功以2999RMB拿下这个小玩具，太小巧了，往桌面一放就是一个小摆件。<br>但是我现在手上是没有显示屏只能用笔记本来替代，为了解决这个问题我就开启mac的第一次折腾：<br> 现在实现的场景就是：macmini在统一局域网下我的windows笔记本可以通过parsec软件直接做到从开机到连接笔记本实现无感连接，在笔记本上面直接就是双系统美滋滋～<br> <img                       lazyload                     src="/images/loading.svg"                     data-src="/2025/12/21/Macmini4/IMG20251220144026.jpg"                      class="" title="Parsec连接"                ><br>这里简单讲解下实现的步骤：<br>1、在Windows和Mac mini安装Parsec(下载地址 <a class="link"   href="https://parsec.app),这里直接用邮箱注册但是记得登录的时候要再次用邮箱去验证登录设备/" >https://parsec.app)，这里直接用邮箱注册但是记得登录的时候要再次用邮箱去验证登录设备<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a><br>2、前期应该准备 视频采集卡 以及 HDMI线 为初步登录账户和安装软件做准备<br>3、笔记本端用OBS去收集mac的屏幕，准备前面的工作</p><img                       lazyload                     src="/images/loading.svg"                     data-src="/2025/12/21/Macmini4/IMG_2363.JPG"                      class="" title="准备线材"                ><p>4、在Parsec软件中设置连接的设置Setting- Host-Enable，macOS给予三种权限<br>5、Mac OS中设置锁屏不休眠以及开机自动登录账号<br>6、回到笔记本上面可以看到Parsec中在同一个局域网中出现mac设备，当然要是没有的话，先去查路由表找到dynamic活动的IP地址，这里要注意的是普遍Wi-Fi中会有2.4G和5G两种频率的信号，记得在mac里Wi-Fi关闭自动连接任意一个频率，确保是连在同一个频率下就行<br>7、arp -a 扫出IP地址，ssh先去连接：ssh <a class="link"   href="mailto:&#122;&#x68;&#x75;&#x7a;&#105;&#x6b;&#117;&#110;&#x40;&#x31;&#x39;&#50;&#x2e;&#x31;&#54;&#x38;&#46;&#49;&#46;&#x31;&#x31;" >zhuzikun@192.168.1.11<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a> 输入密码成功连接到Mac系统<br>8、打开Parsec一般会自动reload，也可以手动，Connect连接上，修改下屏幕分辨率为1920*1080铺满整个屏幕<br>  后续优化可能就是申请IPv4绑定上域名实现远程连接，不过这个使用场景肯定是要回归显示器的，不然发挥不了这台mac的实力。这样只是解决了macmini在外出使用没有显示器的一些办法。<br>  当然你也还有其他选择比如：购买便捷显示屏（500左右）、支持Dp-in的平板、iPad镜像或则随航功能，但是我尝试过用不了可能是ios14版本太低了这个问题解决不了<br>  好的以上就是我第一次购买macmini的一些帮助和建议</p><img                       lazyload                     src="/images/loading.svg"                     data-src="/2025/12/21/Macmini4/IMG_2367.JPG"                      class="" title="耳机联通"                ><img                       lazyload                     src="/images/loading.svg"                     data-src="/2025/12/21/Macmini4/IMG_2368.JPG"                      class="" title="娱乐"                >]]>
     </content>
     <id>https://3322888.xyz/2025/12/21/Macmini4/</id>
     <link href="https://3322888.xyz/2025/12/21/Macmini4/"/>
@@ -47,7 +47,7 @@
       <![CDATA[<h2 id="Welcome-Mac-！"><a href="#Welcome-Mac-！" class="headerlink" title="Welcome Mac ！"></a>Welcome Mac ！</h2><p>在拼多多V3会员下成功以2999RMB拿下这个小玩具]]>
     </summary>
     <title>Macmini4</title>
-    <updated>2026-05-10T12:35:39.573Z</updated>
+    <updated>2026-09-24T13:11:39.000Z</updated>
   </entry>
   <entry>
     <author>
@@ -69,7 +69,7 @@
 <h2 id="段永平的采访"><a href="#段永平的采访" class="headerlink" title="段永平的采访"></a>段永平的采访</h2><p>段的成长经历好像说的与普通人一样平淡，但是唯一能看出来的一点是他对周遭环境的抱怨很少。在谈及家庭的]]>
     </summary>
     <title>闲暇时候的感想</title>
-    <updated>2025-11-13T16:15:46.559Z</updated>
+    <updated>2026-09-24T13:11:39.000Z</updated>
   </entry>
   <entry>
     <author>
@@ -91,7 +91,7 @@
 <h2 id="📝-前言"><a href="#📝-前言" class="headerlink" title="📝 前言"></a>📝 前言</h2><p>很久没写博客了，最近脑袋昏昏沉沉。换季的缘故，感冒、头疼、发热、咳嗽、流鼻涕——一样没落下。<br>于是趁]]>
     </summary>
     <title>近况（2025.9）</title>
-    <updated>2025-09-07T16:14:39.850Z</updated>
+    <updated>2026-09-24T13:11:39.000Z</updated>
   </entry>
   <entry>
     <author>
@@ -109,7 +109,7 @@
 <h2 id="问题一：Web-语言技术的核心是什么？"><a href="#问题一：Web-语言技术的核心是什么？" class="headerlink" title="问题一：We]]>
     </summary>
     <title>每周一问 第一期25-3</title>
-    <updated>2025-05-16T05:16:30.069Z</updated>
+    <updated>2026-09-24T13:11:39.000Z</updated>
   </entry>
   <entry>
     <author>
@@ -128,7 +128,7 @@
 <div class="code-container" data-rel="Plainte]]>
     </summary>
     <title>window电脑usb驱动问题</title>
-    <updated>2025-04-27T02:00:19.307Z</updated>
+    <updated>2026-09-24T13:11:39.000Z</updated>
   </entry>
   <entry>
     <author>
@@ -144,7 +144,7 @@
       <![CDATA[<h1 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h1><p>在 CTF 竞赛中，PWN（漏洞利用）题目是考验选手逆向分析和漏洞利用能力的重要环节。本文将分析一道简单的 Linux 64 位 PWN 题]]>
     </summary>
     <title>利用栈溢出获取 Shell：从零开始的 PWN 之旅</title>
-    <updated>2025-04-19T16:09:48.259Z</updated>
+    <updated>2026-09-24T13:11:39.000Z</updated>
   </entry>
   <entry>
     <author>
@@ -161,6 +161,6 @@
 <li>mips linux：使用mips指令架构的linux系统，广泛应用于嵌入式系统，路由器常用mips32和arm]]>
     </summary>
     <title>loT基本知识</title>
-    <updated>2025-04-19T08:10:17.522Z</updated>
+    <updated>2026-09-24T13:11:39.000Z</updated>
   </entry>
 </feed>
