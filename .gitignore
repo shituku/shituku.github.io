@@ -1,0 +1,17 @@
+.DS_Store
+Thumbs.db
+db.json
+*.log
+node_modules/
+public/
+.deploy*/
+_multiconfig.yml
+
+# 零散临时文件（不入库）
+tmp_article.html
+居家.png
+优化日志.md
+站点图标.jpg
+.codex-hexo-server.err.log
+.codex-hexo-server.out.log
+.hexo-server.log

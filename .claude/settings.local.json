@@ -1,0 +1,31 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm install *)",
+      "Bash(npm uninstall *)",
+      "Bash(npx hexo *)",
+      "Bash(npm update *)",
+      "Bash(npm list *)",
+      "Bash(npm view *)",
+      "Bash(node -e \"console.log\\(require\\('./themes/redefine/package.json'\\).version\\)\")",
+      "Bash(git fetch *)",
+      "Skill(deep-research)",
+      "Workflow(deep-research)",
+      "WebSearch",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:v3.swup.js.org)",
+      "WebFetch(domain:swup.js.org)",
+      "WebFetch(domain:cloud.tencent.com)",
+      "WebFetch(domain:redefine-docs.ohevan.com)",
+      "WebFetch(domain:deepwiki.com)",
+      "WebFetch(domain:redefine-docs-v1.ohevan.com)",
+      "WebFetch(domain:webcache.googleusercontent.com)",
+      "WebFetch(domain:blog.csdn.net)",
+      "WebFetch(domain:www.programmersought.com)",
+      "WebFetch(domain:runebook.dev)",
+      "WebFetch(domain:reintech.io)",
+      "WebFetch(domain:redefine.ohevan.com)",
+      "Bash(curl *)"
+    ]
+  }
+}

@@ -1,0 +1,40 @@
+# 相册数据 — 每个相册有一个封面 + 名称 + 描述 + 照片列表
+# 照片放在 source/uploads/gallery/ 目录
+#
+# 格式说明:
+#   name: 相册名称
+#   desc: 相册描述
+#   cover: 相册封面图
+#   photos: 照片列表
+#     - image: 照片地址
+#       title: 照片标题
+#       desc: 照片说明 (可选)
+
+- name: 随拍集
+  desc: 手机镜头下的生活碎片 · 不定期更新
+  cover: /uploads/gallery/agc_v9.9_r420260107_162450253.jpg
+  photos:
+    - image: /uploads/gallery/agc_v9.9_r420250803_090746757.jpg
+      title: 街角
+    - image: /uploads/gallery/agc_v9.9_r420251006_002926797.jpg
+      title: 黄昏
+    - image: /uploads/gallery/agc_v9.9_r420251006_010156745.jpg
+      title: 夜色
+    - image: /uploads/gallery/agc_v9.9_r420260107_135253718.jpg
+      title: 冬日
+    - image: /uploads/gallery/agc_v9.9_r420260107_135322746.jpg
+      title: 午后
+    - image: /uploads/gallery/agc_v9.9_r420260107_162450253.jpg
+      title: 傍晚
+    - image: /uploads/gallery/agc_v9.9_r420260507_190014535.jpg
+      title: 初夏
+
+- name: 收藏
+  desc: 喜欢的壁纸与插画
+  cover: /uploads/gallery/【哲风壁纸】二次元少女-动漫插画.png
+  photos:
+    - image: /uploads/gallery/【哲风壁纸】二次元少女-动漫插画.png
+      title: 二次元少女
+    - image: /uploads/gallery/【哲风壁纸】双马尾-对话框-小猫.png
+      title: 双马尾小猫
+
