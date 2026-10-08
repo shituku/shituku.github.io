@@ -1,0 +1,577 @@
+# >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> start
+# THEME REDEFINE CONFIGURATION FILE V2              # 主题 Redefine 配置文件 V2
+# BY EVANNOTFOUND                                  # 作者 EVANNOTFOUND
+# GITHUB: https://github.com/EvanNotFound/hexo-theme-redefine  # GitHub 仓库地址
+# DOCUMENTATION: https://redefine-docs.ohevan.com    # 文档地址
+# DEMO: https://redefine.ohevan.com                  # 演示站点
+# <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< end
+
+# BASIC INFORMATION >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> start  # 基本信息开始
+# Docs: https://redefine-docs.ohevan.com/basic/info                # 文档: 基本信息
+info:  # Site title                                              # 站点标题
+  title: tsuki no shizuku  # Site subtitle                        # 站点副标题
+  # subtitle: 
+  # Author name                                                   # 作者名
+  author: The Roryn  # Site URL                                   # 站点网址
+  # url: https://redefine.ohevan.com
+# BASIC INFORMATION <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< end  # 基本信息结束
+
+# IMAGE CONFIGURATION >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> start  # 图片配置开始
+# Docs: https://redefine-docs.ohevan.com/basic/defaults            # 文档: 默认图片设置
+defaults:  # Favicon                                               # 网站图标
+  favicon: /images/redefine-favicon.svg  # Site logo                       # 网站 Logo
+  # logo: /images/head.jpg
+  # Site avatar                                                   # 网站头像
+  avatar: /images/head.jpg
+# IMAGE CONFIGURATION <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< end  # 图片配置结束
+
+# COLORS >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> start  # 颜色设置开始
+# Docs: https://redefine-docs.ohevan.com/basic/colors              # 文档: 颜色设置
+colors:
+  # Primary color                                                 # 主色
+  primary: "#A31F34"  # Secondary color (TBD)                     # 次要颜色（待定）
+  secondary:  # Default theme mode initial value (will be overwritten by prefer-color-scheme)  # 默认主题模式（可被系统偏好覆盖）
+  default_mode: light # light, dark
+# COLORS <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< end  # 颜色设置结束
+
+# GLOBAL BACKGROUND >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> start
+# Full-page background image with blur + semi-transparent overlay
+# The overlay uses var(--background-color) which adapts to light/dark mode automatically
+global_bg:
+  enable: true # 是否启用全局背景图片
+  image: /images/居家.png # 背景图片路径（放在 source/images/ 目录下）
+  blur: 4 # 模糊程度（px），推荐 2-8
+  opacity: 0.55 # 遮罩不透明度（0-1），越大图片越淡，越小图片越明显
+# GLOBAL BACKGROUND <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< end
+
+# SITE CUSTOMIZATION >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> start
+# Docs: https://redefine-docs.ohevan.com/basic/global              # 文档: 全局设置
+global:  # Custom global fonts                                     # 全局字体设置
+  fonts:
+    # Chinese fonts                                               # 中文字体
+    chinese: 
+      enable: false # 是否启用自定义中文字体
+      family:  # 字体名称
+      url:  # 字体CSS文件URL
+    # English fonts                                               # 英文字体
+    english: 
+      enable: false # Whether to enable custom english fonts        # 是否启用自定义英文字体
+      family:  # 字体名称
+      url:  # 字体CSS文件URL
+    # Custom title fonts (navbar, sidebar)                         # 标题字体（导航栏/侧边栏）
+    title:
+      enable: false # Whether to enable custom title fonts          # 是否启用自定义标题字体
+      family:  # 字体名称
+      url:  # 字体CSS文件URL
+  content_max_width: 1000px  # Content max width                   # 内容最大宽度
+  sidebar_width: 210px  # Sidebar width                            # 侧边栏宽度
+  hover:
+    shadow: true # shadow effect                                    # 鼠标悬停阴影效果
+    scale: false # scale effect                                     # 鼠标悬停缩放效果
+  scroll_progress:
+    bar: false # progress bar                                       # 滚动进度条
+    percentage: true # percentage                                    # 滚动进度百分比
+  website_counter:
+    url: https://cn.vercount.one/js # counter API URL (no need to change)  # 计数器API地址（无需修改）
+    enable: false # enable website counter or not                    # 是否启用网站计数器
+    site_pv: true # site page view                                   # 站点页面浏览量
+    site_uv: true # site unique visitor                             # 站点独立访客数
+    post_pv: true # post page view                                   # 文章页面浏览量
+  single_page: true  # Whether to enable single page experience (using swup). See https://swup.js.org/. similar to pjax  # 是否启用单页体验（使用swup，类似pjax）
+  preloader:
+    enable: false
+    custom_message: # Custom message. If empty, the site title will be displayed  # 自定义加载信息（留空则显示站点标题）
+  open_graph:
+    enable: true
+    image: /images/redefine-og.webp  # default og:image              # 默认Open Graph图片
+    description: 欢迎来到Roryn的小站.  # 网站描述
+  google_analytics:
+    enable: false # Whether to enable Google Analytics               # 是否启用谷歌分析
+    id:  # Google Analytics Measurement ID                          # 谷歌分析测量ID
+# SITE CUSTOMIZATION <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< end
+
+# FONTAWESOME >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> start
+# Docs: https://redefine-docs.ohevan.com/basic/fontawesome           # 文档: FontAwesome设置
+fontawesome: # Pro v6.2.1                                           # Pro版本v6.2.1
+  thin: false  # Thin version                                        # 细体版本
+  light: false  # Light version                                     # 轻量版本
+  duotone: false  # Duotone version                                 # 双色调版本
+  sharp_solid: false # Sharp Solid version                          # 锐利实心版本
+# FONTAWESOME <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< end
+
+# HOME BANNER >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> start
+# Docs: https://redefine-docs.ohevan.com/home/home_banner            # 文档: 首页横幅设置
+home_banner:  # Whether to enable home banner                       # 是否启用首页横幅
+  enable: true  # style of home banner                              # 横幅样式（静态或固定）
+  style: fixed # static or fixed
+  image: 
+    light: /images/wallhaven-wqery6-light.webp # light mode          # 亮色模式图片
+    dark: /images/居家.png # dark mode            # 暗色模式图片
+  title: Roryn's blog # Home banner title                        # 横幅标题
+  subtitle:
+    text:
+      - "保持独立思考，是思想自由的基石。"
+      - "真正的富有，是内心的自由和丰盈。"
+      - "别怕迷路，每一次探索都是风景。"
+      - "扬起风帆，驶向心之所向的海洋。"
+      - "听从内心的声音，那是通往自由的导航。"
+      - "现实和理想之间，不变的是跋涉。"
+      - "暗淡与辉煌之间，不变的是开拓。"
+      - "人生只有一次，活成自己想要的样子才不遗憾。"
+    # subtitle text, array                                  # 副标题文本（数组）
+    hitokoto:  # 一言配置
+      enable: false # Whether to enable hitokoto                     # 是否启用一言
+      show_author: true # Whether to show author                    # 是否显示作者
+      api: https://v1.hitokoto.cn # API URL, can add types, see https://developer.hitokoto.cn/sentence/#%E5%8F%A5%E5%AD%90%E7%B1%BB%E5%9E%8B-%E5%8F%82%E6%95%B0  # API地址（可添加类型参数）
+    typing_speed: 100 # Typing speed (ms)                            # 打字速度（毫秒）
+    backing_speed: 80 # Backing speed (ms)                           # 回退速度（毫秒）
+    starting_delay: 500 # Start delay (ms)                           # 开始延迟（毫秒）
+    backing_delay: 1500 # Backing delay (ms)                         # 回退延迟（毫秒）
+    loop: true # Whether to loop                                     # 是否循环
+    smart_backspace: true # Whether to smart backspace                # 是否启用智能退格
+  text_color: 
+    light: "#fff" # light mode                                       # 亮色模式文本颜色
+    dark: "#d1d1b6" # dark mode                                     # 暗色模式文本颜色
+  text_style: 
+    # Title font size                                               # 标题字体大小
+    title_size: 2.8rem
+    # Subtitle font size                                            # 副标题字体大小
+    subtitle_size: 1.5rem
+    # Line height between title and subtitle                        # 标题与副标题行高
+    line_height: 1.2
+  custom_font: 
+    # Whether to enable custom font                                 # 是否启用自定义字体
+    enable: false
+    # Font family                                                   # 字体名称
+    family: 
+    # URL to font CSS file                                          # 字体CSS文件URL
+    url: 
+  social_links:
+    # Whether to enable                                             # 是否启用社交链接
+    enable: true
+    # Social links style                                            # 社交链接样式
+    style: default # default, reverse, center
+    # Social links                                                  # 社交链接
+    links:
+      - icon: github
+        url: https://github.com/shituku # your GitHub URL            # GitHub地址
+      - icon: email
+        url: shituku.su@outlook.com # your email                     # 邮箱地址
+      # ...... # you can add more                                    # 可添加更多链接
+    # Social links with QRcode drawers                               # 带二维码抽屉的社交链接
+    qrs:
+      - icon: weixin
+        qr: /images/weixi.jpg # your Wechat QRcode image URL         # 微信二维码图片URL
+      # ...... # you can add more                                    # 可添加更多二维码
+# HOME BANNER <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< end
+
+# NAVIGATION BAR >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> start  # 导航栏配置开始
+# Docs: https://redefine-docs.ohevan.com/home/navbar                  # 文档：导航栏设置
+navbar:  # Auto hide navbar                                          # 自动隐藏导航栏
+  auto_hide: false  # Navbar background color                        # 导航栏背景颜色
+  color:
+    left: "#f78736" #左侧颜色                                        # 左侧颜色
+    right: "#367df7"  #右侧颜色                                      # 右侧颜色
+    transparency: 35 #透明度百分比 (10-99)                           # 透明度（百分比，10-99）
+  width:
+    home: 1200px #首页宽度                                           # 首页宽度
+    pages: 1000px #其他页面宽度                                      # 其他页面宽度
+  links:
+    Home:
+      path: /
+      icon: fa-regular fa-house # can be empty                       # 图标（可选）
+    Gallery:
+      path: /gallery
+      icon: fa-regular fa-images # can be empty
+    # Archives:
+    #   path: /archives
+    #   icon: fa-regular fa-archive # can be empty
+    # Status:
+    #   path: https://status.ohevan.com/
+    #   icon: fa-regular fa-chart-bar
+    About:
+      icon: fa-regular fa-user
+      submenus:
+        Me: /about
+        Github: https://github.com/shituku
+        Friends: /friends
+    # Links: 
+    #   icon: fa-regular fa-link
+    #   submenus:
+    #     Link1: /link1
+    #     Link2: /link2
+    #     Link3: /link3
+    # ...... # you can add more                                      # 可添加更多链接
+  search:
+    # Whether to enable                                             # 是否启用搜索（需安装hexo-generator-searchdb）
+    enable: true
+    path: search.json
+    field: post
+    format: html
+    limit: 10
+    # Preload search data when the page loads                        # 页面加载时预加载搜索数据
+    preload: true
+# NAVIGATION BAR <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< end
+
+# HOME PAGE ARTICLE SETTINGS >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> start
+# Docs: https://redefine-docs.ohevan.com/home/home                   # 文档: 首页文章设置
+home:  # Sidebar settings                                            # 侧边栏设置
+  sidebar:
+    enable: true # Whether to enable sidebar                         # 是否启用侧边栏
+    position: left # Sidebar position. left, right                   # 侧边栏位置（左/右）
+    first_item: menu # First item in sidebar. menu, info             # 侧边栏首个项目（菜单/信息）
+    announcement: 但行好事，莫问前程 # Announcement text                                # 公告文本
+    show_on_mobile: true # Whether to show sidebar navigation on mobile sheet menu  # 移动端是否显示侧边栏导航
+    links:
+      Archives: 
+        path: /archives 
+        icon: fa-regular fa-archive # can be empty
+      Tags: 
+        path: /tags 
+        icon: fa-regular fa-tags # can be empty
+      Categories: 
+        path: /categories 
+        icon: fa-regular fa-folder # can be empty
+       # you can add more                                    # 可添加更多链接
+  article_date_format: auto # auto, relative, YYYY-MM-DD, YYYY-MM-DD HH:mm:ss etc.  # 文章日期格式
+  excerpt_length: 200 # Max length of article excerpt                # 文章摘要最大长度
+  categories:
+    enable: true  # Whether to enable                                # 是否显示分类
+    limit: 8 # Max number of categories to display                   # 分类显示上限
+  tags:
+    enable: true  # Whether to enable                                # 是否显示标签
+    limit: 8  # Max number of tags to display                       # 标签显示上限
+# HOME PAGE ARTICLE SETTINGS <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< end
+
+# ARTICLE >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> start
+# Docs: https://redefine-docs.ohevan.com/posts/articles               # 文档: 文章设置
+articles:  # Set the styles of the article                           # 文章样式设置
+  style:
+    font_size: 16px # Font size                                       # 字体大小
+    line_height: 1.5 # Line height                                    # 行高
+    image_border_radius: 14px # image border radius                   # 图片边框圆角
+    image_alignment: center # image alignment. left, center           # 图片对齐方式（左/中）
+    image_caption: false # Whether to display image caption           # 是否显示图片说明
+    link_icon: true # Whether to display link icon                    # 是否显示链接图标
+    delete_mask: false # Add mask effect to <del> tags, hiding content by default and revealing on hover  # 为<del>标签添加遮罩效果（默认隐藏，悬停显示）
+    title_alignment: left # Title alignment. left, center             # 标题对齐方式（左/中）
+    headings_top_spacing: # Top spacing for headings from h1-h6       # 标题（h1-h6）顶部间距
+      h1: 3.2rem
+      h2: 2.4rem
+      h3: 1.9rem
+      h4: 1.6rem
+      h5: 1.4rem
+      h6: 1.3rem
+  word_count:
+    enable: true # Whether to enable                                 # 是否启用字数统计（需安装hexo-wordcount）
+    count: true # Whether to display word count                       # 是否显示字数
+    min2read: true # Whether to display reading time                  # 是否显示阅读时间
+  author_label: 
+    enable: true # 是否启用作者标签
+    auto: true # 是否自动生成作者等级标签（如Lv1、Lv2）
+    # list: 作者等级标签列表，每个对象包含：
+    #   name: 等级名称
+    #   condition: 文章数达到该条件时显示此等级
+    #   color: 标签颜色
+    list: 
+    - name: "新手"       # 文章数 < 3 时显示
+      condition: 0      # 文章数大于等于0
+      color: "#F39C12"  # 橙色
+    - name: "进阶"       # 文章数 ≥3 且 < 10 时显示
+      condition: 3      # 文章数大于等于3
+      color: "#2ECC71"  # 绿色
+    - name: "达人"       # 文章数 ≥10 且 < 20 时显示
+      condition: 10     # 文章数大于等于10
+      color: "#3498DB"  # 蓝色
+    - name: "专家"       # 文章数 ≥20 且 < 50 时显示
+      condition: 20     # 文章数大于等于20
+      color: "#34495E"  # 深灰色
+    - name: "大师"       # 文章数 ≥50 时显示
+      condition: 50     # 文章数大于等于50
+      color: "#9B59B6"  # 紫色
+      # Code block settings                                  # 代码块设置
+  code_block:
+    copy: true # Whether to enable code block copy button             # 是否启用代码块复制按钮
+    style: mac # mac | simple                                        # 代码块样式
+    highlight_theme: # Color scheme for highlightjs code highlighting. For preview, see https://highlightjs.org/examples  # 代码高亮主题（亮色/暗色模式）
+      light: github # light mode theme, support: github, atom-one-light, default
+      dark: vs2015 # dark mode theme, support: github-dark, monokai-sublime, vs2015, night-owl, atom-one-dark, nord, tokyo-night-dark, a11y-dark, agate
+    font: # Custom font                                              # 自定义代码字体
+      enable: false # Whether to enable                              # 是否启用
+      family: # Font family                                           # 字体名称
+      url: # Font URL to CSS file                                    # 字体CSS文件URL
+  toc:
+    enable: true # Whether to enable TOC                             # 是否启用目录
+    max_depth: 3 # TOC depth                                         # 目录最大层级
+    number: false # Whether to add number to TOC automatically       # 是否自动添加目录编号
+    expand: true # Whether to expand TOC                             # 是否展开目录
+    init_open: true # Open toc by default                            # 默认展开目录
+  copyright:
+    enable: true # 是否启用版权声明
+    default: cc_by_nc_sa # 默认许可证类型，知识共享署名 - 非商业性使用 - 相同方式共享许可协议
+  lazyload: true # 是否启用图片懒加载
+  pangu_js: true # 是否启用Pangu.js自动在中英文间添加空格
+  recommendation:
+    # Whether to enable article recommendation                       # 是否启用文章推荐（需安装nodejieba）
+    enable: false
+    # Article recommendation title                                  # 推荐标题
+    title: 推荐阅读
+    # Max number of articles to display                             # 桌面端显示数量
+    limit: 3
+    # Max number of articles to display mobile                       # 移动端显示数量
+    mobile_limit: 2
+    # Placeholder image                                             # 占位图
+    placeholder: /images/wallhaven-wqery6-light.webp
+    # Skip directory                                                # 跳过的目录
+    skip_dirs: []
+# ARTICLE <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< end
+
+# COMMENT >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> start
+# Docs: https://redefine-docs.ohevan.com/posts/comment                # 文档: 评论设置
+comment:  # Whether to enable comment                               # 是否启用评论
+  enable: true
+  system: giscus
+  config:
+    # Giscus comment system. See https://giscus.app/                 # Giscus评论系统配置
+    giscus:
+      repo: shituku/shituku.github.io # Github repository name
+      repo_id: R_kgDOOa-DTQ
+      category: Announcements # Github discussion category
+      category_id: DIC_kwDOOa-DTc4C-rUA
+      mapping: pathname
+      strict: 0
+      reactions_enabled: 1
+      emit_metadata: 0
+      lang: zh-CN
+      input_position: bottom
+      loading: lazy
+# COMMENT <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< end
+
+# FOOTER >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> start
+# Docs: https://redefine-docs.ohevan.com/footer                       # 文档: 页脚设置
+footer:  # Show website running time                                # 显示网站运行时间
+  runtime: true # show website running time or not                   # 是否启用
+  icon: '<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 0.5s; color: #f54545"></i>'  # 页脚图标（FontAwesome代码）
+  start: 2025/3/22 11:45:14  # The start time of the website, format: YYYY/MM/DD HH:mm:ss  # 网站启动时间（格式）
+  statistics: true # show site statistics or not (total articles, total words)  # 是否显示站点统计（文章总数、字数）
+  customize:  # Footer message                                        # 自定义页脚文本
+  icp:
+    enable: false # Whether to enable                                 # 是否启用ICP备案
+    number: # ICP record number                                       # ICP备案号
+    url: # ICP record url                                             # ICP备案链接
+# FOOTER <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< end
+
+# INJECT >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> start
+# Docs: https://redefine-docs.ohevan.com/inject                       # 文档: 注入代码
+inject:  # Whether to enable inject                                  # 是否启用自定义代码注入
+  enable: true  # Inject custom head html code                       # 注入头部HTML代码
+  head:
+    - |
+      <style>
+      /* 移动端显示音乐播放器 */
+      @media screen and (max-width: 768px) {
+        .aplayer {
+          display: block !important;
+        }
+        .aplayer.aplayer-fixed {
+          max-width: 280px;
+          bottom: 12px;
+          left: 8px;
+        }
+        .aplayer .aplayer-list {
+          max-height: 200px;
+        }
+      }
+      /* 代码块显示修复：防止长代码行撑破容器 */
+      figure.highlight {
+        display: block;
+        overflow-x: auto !important;
+        max-width: 100%;
+      }
+      figure.highlight table {
+        display: table;
+        width: max-content;
+        max-width: 100%;
+        table-layout: auto;
+        white-space: nowrap;
+      }
+      figure.highlight td.code {
+        width: auto;
+      }
+      figure.highlight td.code pre {
+        width: auto;
+        white-space: pre !important;
+        word-wrap: normal !important;
+        overflow-wrap: normal !important;
+      }
+      /* 首页 Banner 移动端适配 */
+      .home-banner-background {
+        transform: none !important;
+      }
+      .home-banner-background img {
+        object-position: center center;
+      }
+      @media screen and (max-width: 768px) {
+        .home-banner-background {
+          transform: none !important;
+        }
+        .home-banner-container {
+          min-height: 100vh;
+          min-height: 100dvh;
+        }
+      }
+      /* 移动端不受影响 */
+      </style>
+    - |
+      <script>
+      // 相册：纯 show/hide，无 JSON 解析，无动态 HTML 生成
+      (function() {
+        window.showGalleryAlbum = function(index) {
+          var grid = document.getElementById('albumGrid');
+          var header = document.querySelector('.gallery-header');
+          if (grid) grid.style.display = 'none';
+          if (header) header.style.display = 'none';
+          // 隐藏所有相册照片区
+          var sections = document.querySelectorAll('.album-photos-section');
+          for (var i = 0; i < sections.length; i++) {
+            sections[i].style.display = 'none';
+          }
+          // 显示目标相册
+          var target = document.getElementById('gallery-album-' + index);
+          if (target) target.style.display = '';
+          window.scrollTo({top: 0, behavior: 'smooth'});
+        };
+        window.hideGalleryAlbum = function() {
+          var grid = document.getElementById('albumGrid');
+          var header = document.querySelector('.gallery-header');
+          if (grid) grid.style.display = '';
+          if (header) header.style.display = '';
+          var sections = document.querySelectorAll('.album-photos-section');
+          for (var i = 0; i < sections.length; i++) {
+            sections[i].style.display = 'none';
+          }
+          window.scrollTo({top: 0, behavior: 'smooth'});
+        };
+      })();
+      </script>
+    - |
+      <script>
+      // 音乐播放器：不用时箭头吸附左边缘，悬停展开
+      (function() {
+        function init() {
+          var player = document.querySelector('.aplayer.aplayer-fixed');
+          if (!player) { setTimeout(init, 200); return; }
+          if (player.dataset.dockInit) return; // 已初始化，跳过（Swup 导航时元素会重建）
+          player.dataset.dockInit = '1';
+
+          var switcher = player.querySelector('.aplayer-miniswitcher');
+          if (!switcher) { setTimeout(init, 200); return; }
+
+          // 不处理移动端
+          if (window.innerWidth <= 768) return;
+
+          var body = player.querySelector('.aplayer-body');
+          var list = player.querySelector('.aplayer-list');
+          var lrc  = player.querySelector('.aplayer-lrc');
+          var hidden = [body, list, lrc].filter(Boolean);
+
+          // 将箭头标签移到屏幕左边缘
+          switcher.style.position = 'fixed';
+          switcher.style.left = '0';
+          switcher.style.top = '50%';
+          switcher.style.marginTop = '-22px';
+          switcher.style.height = '44px';
+          switcher.style.width = '30px';
+          switcher.style.opacity = '1';
+          switcher.style.borderRadius = '0 9px 9px 0';
+          switcher.style.zIndex = '100';
+          switcher.style.display = 'block';
+          var icon = switcher.querySelector('.aplayer-icon');
+          if (icon) icon.style.transform = 'rotateY(0deg)';
+
+          // 默认隐藏播放器主体
+          hidden.forEach(function(el) {
+            el.style.transition = 'opacity 0.25s ease';
+            el.style.opacity = '0';
+          });
+
+          // 悬停展开
+          player.addEventListener('mouseenter', function() {
+            hidden.forEach(function(el) { el.style.opacity = '1'; });
+            switcher.style.opacity = '0';
+          });
+          player.addEventListener('mouseleave', function() {
+            hidden.forEach(function(el) { el.style.opacity = '0'; });
+            switcher.style.opacity = '1';
+          });
+        }
+
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', function() { setTimeout(init, 400); });
+        } else {
+          setTimeout(init, 400);
+        }
+      })();
+      </script>
+    -  # Inject custom footer html code                              # 注入页脚HTML代码
+  footer:
+    -
+    -
+# INJECT <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< end
+
+# PLUGINS >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> start
+# Docs: https://redefine-docs.ohevan.com/plugins                      # 文档: 插件配置
+plugins:  # RSS feed. Requires hexo-generator-feed (npm i hexo-generator-feed). See https://github.com/hexojs/hexo-generator-feed  # RSS订阅（需安装hexo-generator-feed）
+  feed:
+    enable: true # Whether to enable                                 # 是否启用
+  aplayer:
+    enable: true # Whether to enable                                 # 是否启用APlayer音乐播放器
+    type: fixed # fixed, mini                                         # 播放器类型（固定/迷你）
+    audios:
+      - name: Call of Silence # audio name                                           # 音频名称
+        artist: Gemie # audio artist                                       # 音频作者
+        url: /music/Call of Silence.mp3  # audio url                                              # 音频地址
+        cover: /images/music-cover/Silence.jpg # audio cover url                                      # 封面地址
+        lrc: # audio cover lrc                                        # 歌词地址
+      - name: Normal No More # audio name
+        artist: TYSM # audio artist
+        url: /music/Normal No More.mp3 # audio url
+        cover: /images/normal no more.jpg # audio cover url
+        lrc: # audio cover lrc
+      - name: 心做し # audio name
+        artist: Akuya # audio artist
+        url: /music/心做.mp3 # audio url
+        cover: /images/心做.jpg # audio cover url
+        lrc: # audio cover lrc
+  # .... you can add more audios here                                 # 可添加更多音频
+
+  # Mermaid JS. Requires hexo-filter-mermaid-diagrams (npm i hexo-filter-mermaid-diagrams). See https://mermaid.js.org/  # Mermaid图表（需安装hexo-filter-mermaid-diagrams）
+  mermaid:
+    enable: false # enable mermaid or not                            # 是否启用
+    version: "11.4.1" # default v11.4.1                              # 版本号
+# PLUGINS <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< end
+
+# PAGE TEMPLATES >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> start
+# Docs: https://redefine-docs.ohevan.com/page_templates               # 文档: 页面模板设置
+page_templates:  # Friend Links page column number                   # 友链页面列数
+  friends_column: 2  # Tags page style                               # 标签页样式（模糊/云状）
+  tags_style: blur # blur, cloud
+# PAGE TEMPLATES <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< end
+
+# CDN >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> start
+# Docs: https://redefine-docs.ohevan.com/cdn                         # 文档: CDN配置
+cdn:  # Whether to enable CDN                                       # 是否启用CDN
+  enable: false  # CDN Provider                                       # CDN提供商（可选npmmirror, zstatic, cdnjs, jsdelivr, unpkg, custom）
+  provider: npmmirror # npmmirror, zstatic, cdnjs, jsdelivr, unpkg, custom
+  # Custom CDN URL                                                  # 自定义CDN地址（格式示例）
+  # format example: https://cdn.custom.com/hexo-theme-redefine/${version}/source/${path}
+  # The ${path} must leads to the root of the "source" folder of the theme
+  custom_url:
+# CDN <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< end
+
+# DEVELOPER MODE >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> start
+# Docs: https://redefine-docs.ohevan.com/developer                    # 文档: 开发者模式
+developer:  # Whether to enable developer mode (only for developers who want to modify the theme source code, not for ordinary users)  # 是否启用开发者模式（仅用于修改主题源码，普通用户勿用）
+  enable: false
+  check_update: false # Whether to check theme update info during Hexo startup
+# DEVELOPER MODE <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< end

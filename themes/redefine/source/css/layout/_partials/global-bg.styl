@@ -1,0 +1,46 @@
+// ========================================================================================
+//  Global background image — full-page fixed background with blur + overlay
+//  Controlled by theme.global_bg in _config.yml
+// ========================================================================================
+
+if hexo-config('global_bg.enable')
+  // Remove solid backgrounds that would cover the background image
+  // "html body" matches the specificity of basic.styl's "html, body"
+  // "html" keeps its background as the canvas fallback color
+  html body
+    background transparent
+
+  .page-container
+    background transparent !important  // page.styl loads after _partials, need !important
+
+  // Semi-transparent content cards — lets bg image show through slightly
+  // Use @css block to pass color-mix() through Stylus unprocessed
+  @css {
+    .home-article-item,
+    .article-content-container,
+    .sidebar-content,
+    .sidebar-links,
+    .archive-container,
+    .tag-container,
+    .page-template-container {
+      background: color-mix(in srgb, var(--background-color) 75%, transparent) !important;
+    }
+  }
+
+.global-body-bg
+  position fixed
+  inset 0
+  z-index -1
+  pointer-events none
+
+  img
+    width 100%
+    height 100%
+    object-fit cover
+    transform scale(1.1)  // scale up slightly to hide blur edges
+
+  .global-body-bg-overlay
+    position absolute
+    inset 0
+    // var(--background-color) adapts to light/dark mode automatically
+    background var(--background-color)

@@ -1,0 +1,470 @@
+<%
+  const rawData = site.data && site.data.gallery;
+  const albums = Array.isArray(rawData) ? rawData : [];
+  const photos = [];
+
+  albums.forEach(function(album) {
+    (album.photos || []).forEach(function(photo) {
+      photos.push({
+        image: photo.image,
+        title: photo.title || '',
+        desc: photo.desc || '',
+        album: album.name || ''
+      });
+    });
+  });
+
+  const hasPhotos = photos.length > 0;
+  const heroCover = hasPhotos ? photos[0].image : '';
+%>
+
+<div class="gallery-page min-h-screen relative">
+  <div class="gallery-header px-4 md:px-6 pt-8 pb-5 relative">
+    <section class="gallery-hero-panel">
+      <% if (heroCover) { %>
+      <img class="gallery-hero-bg" src="<%= heroCover %>" alt="" aria-hidden="true" loading="eager" decoding="async">
+      <% } %>
+      <div class="gallery-hero-shade"></div>
+      <div class="gallery-hero-content">
+        <span class="gallery-kicker">
+          <i class="fa-regular fa-images"></i>
+          Gallery
+        </span>
+        <h1><%= page.title || '相册' %></h1>
+        <p><%= page.description || '把散落的瞬间铺成一面照片墙。' %></p>
+      </div>
+      <div class="gallery-stats" aria-label="图集统计">
+        <div>
+          <strong><%= photos.length %></strong>
+          <span>照片</span>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <div class="gallery-content max-w-6xl mx-auto px-4 md:px-6 pb-20 relative">
+    <% if (hasPhotos) { %>
+    <div class="photos-grid gallery-photo-wall" id="albumGrid">
+      <% photos.forEach(function(photo, index) { %>
+      <figure class="photo-item gallery-photo-card" style="--photo-delay:<%= Math.min(index * 18, 180) %>ms">
+        <img src="<%= photo.image %>" alt="<%= photo.title || photo.album || 'gallery photo' %>" loading="<%= index < 4 ? 'eager' : 'lazy' %>" decoding="async">
+        <figcaption class="photo-overlay">
+          <% if (photo.title) { %><strong><%= photo.title %></strong><% } %>
+          <% if (photo.desc) { %><span><%= photo.desc %></span><% } %>
+          <% if (photo.album) { %><em><%= photo.album %></em><% } %>
+        </figcaption>
+      </figure>
+      <% }); %>
+    </div>
+    <% } else { %>
+    <div class="gallery-empty-state">
+      <i class="fa-regular fa-images"></i>
+      <p>还没有照片</p>
+      <span>在 source/_data/gallery.yml 中添加照片数据</span>
+    </div>
+    <% } %>
+  </div>
+</div>
+
+<style>
+.gallery-page {
+  --gallery-radius: 14px;
+  --gallery-radius-sm: 10px;
+  --gallery-mobile-gutter: 1rem;
+  --gallery-line: rgba(255, 255, 255, 0.28);
+  --gallery-ink: #242831;
+  --gallery-muted: #687181;
+  --gallery-panel: rgba(255, 255, 255, 0.64);
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.gallery-header,
+.gallery-content {
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.gallery-page ~ #aplayer,
+.gallery-page ~ .aplayer,
+body.gallery-view #aplayer,
+body.gallery-view .aplayer {
+  display: none !important;
+}
+
+body.gallery-view .page-container .main-content-container .main-content-body {
+  overflow-x: hidden;
+}
+
+body.gallery-view .page-container .main-content-container .main-content-body .main-content {
+  width: 100% !important;
+  max-width: none !important;
+}
+
+[data-theme="dark"] .gallery-page {
+  --gallery-line: rgba(255, 255, 255, 0.14);
+  --gallery-panel: rgba(24, 24, 28, 0.64);
+}
+
+.gallery-hero-panel {
+  position: relative;
+  max-width: 72rem;
+  min-height: 16rem;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: end;
+  gap: 1.2rem;
+  overflow: hidden;
+  border: 1px solid var(--gallery-line);
+  border-radius: var(--gallery-radius);
+  background:
+    linear-gradient(135deg, rgba(255,255,255,0.76), rgba(255,255,255,0.34)),
+    var(--second-background-color);
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+}
+
+.gallery-hero-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.28;
+}
+
+.gallery-hero-shade {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(255,255,255,0.78) 0%, rgba(255,255,255,0.48) 52%, rgba(255,255,255,0.08) 100%),
+    linear-gradient(180deg, rgba(0,0,0,0), rgba(0,0,0,0.12));
+}
+
+.gallery-hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 35rem;
+  padding: 2.4rem;
+}
+
+.gallery-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--primary-color);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.gallery-hero-content h1 {
+  margin: 0.5rem 0 0.55rem;
+  color: var(--gallery-ink);
+  font-size: clamp(2.1rem, 5vw, 4.2rem);
+  line-height: 0.98;
+  font-weight: 800;
+  letter-spacing: 0;
+}
+
+.gallery-hero-content p {
+  max-width: 28rem;
+  margin: 0;
+  color: #4c5565;
+  font-size: 0.98rem;
+  line-height: 1.8;
+}
+
+.gallery-stats {
+  position: relative;
+  z-index: 1;
+  width: min(7.8rem, calc(100% - 2rem));
+  min-width: 7.2rem;
+  flex-shrink: 0;
+  justify-self: end;
+  margin: 0 1rem 1rem 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.58);
+  border-radius: 13px;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.64), rgba(255,255,255,0.38)),
+    rgba(255, 255, 255, 0.26);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.62),
+    0 8px 20px rgba(15,23,42,0.07);
+  -webkit-backdrop-filter: saturate(160%) blur(10px);
+  backdrop-filter: saturate(160%) blur(10px);
+}
+
+[data-theme="dark"] .gallery-stats {
+  border-color: rgba(255,255,255,0.18);
+  background:
+    linear-gradient(180deg, rgba(42,42,46,0.72), rgba(24,24,28,0.5)),
+    rgba(24,24,28,0.42);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.12),
+    0 8px 20px rgba(0,0,0,0.14);
+}
+
+.gallery-stats div {
+  min-width: 0;
+  padding: 0.78rem 0.9rem;
+  display: flex;
+  min-height: 3.4rem;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.gallery-stats strong,
+.gallery-stats span {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.gallery-stats strong {
+  color: var(--gallery-ink);
+  font-size: 1.28rem;
+  line-height: 1.2;
+  font-weight: 800;
+}
+
+.gallery-stats span {
+  color: var(--gallery-muted);
+  font-size: 0.74rem;
+  font-weight: 600;
+}
+
+.gallery-photo-wall {
+  margin-top: 0.95rem;
+  columns: 4 15rem;
+  column-gap: 0.95rem;
+}
+
+.photo-item.gallery-photo-card {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  margin: 0 0 0.95rem;
+  break-inside: avoid;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.18);
+  border-radius: var(--gallery-radius-sm);
+  background: var(--second-background-color);
+  cursor: zoom-in;
+  transform: translateY(0);
+  animation: gallery-card-in 0.42s ease both;
+  animation-delay: var(--photo-delay);
+}
+
+.photo-item.gallery-photo-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  transition: transform 0.35s ease;
+}
+
+.photo-item.gallery-photo-card:hover img {
+  transform: scale(1.025);
+}
+
+.photo-overlay {
+  position: absolute;
+  inset: auto 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.22rem;
+  padding: 2.8rem 0.9rem 0.9rem;
+  background: linear-gradient(180deg, rgba(0,0,0,0), rgba(0,0,0,0.72));
+  color: #fff;
+  opacity: 0;
+  transform: translateY(0.4rem);
+  transition: opacity 0.22s ease, transform 0.22s ease;
+}
+
+.photo-overlay strong {
+  font-size: 0.9rem;
+  line-height: 1.35;
+}
+
+.photo-overlay span,
+.photo-overlay em {
+  color: rgba(255,255,255,0.74);
+  font-size: 0.74rem;
+  line-height: 1.45;
+  font-style: normal;
+}
+
+.photo-item.gallery-photo-card:hover .photo-overlay {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.gallery-empty-state {
+  padding: 5rem 1rem;
+  color: var(--gallery-muted);
+  text-align: center;
+}
+
+.gallery-empty-state i {
+  display: block;
+  margin-bottom: 1rem;
+  font-size: 3.8rem;
+}
+
+.gallery-empty-state p {
+  color: var(--second-text-color);
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.gallery-empty-state span {
+  font-size: 0.9rem;
+}
+
+@keyframes gallery-card-in {
+  from {
+    opacity: 0;
+    transform: translateY(0.65rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .photo-item.gallery-photo-card {
+    animation: none;
+  }
+
+  .photo-item.gallery-photo-card img {
+    transition: none;
+  }
+}
+
+@media (max-width: 900px) {
+  .gallery-hero-panel {
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+
+  .gallery-hero-content {
+    padding: 2rem 1.25rem 0;
+  }
+
+  .gallery-stats {
+    width: 6.4rem;
+    min-width: 0;
+    justify-self: start;
+    margin: 0 0 1rem 1.25rem;
+  }
+
+  .gallery-photo-wall {
+    columns: 3 13rem;
+  }
+}
+
+@media (max-width: 640px) {
+  body.gallery-view .page-container .main-content-container .main-content-body {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  body.gallery-view .page-container .main-content-container .main-content-body .main-content {
+    width: 100% !important;
+  }
+
+  .gallery-header,
+  .gallery-content {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-left: var(--gallery-mobile-gutter) !important;
+    padding-right: var(--gallery-mobile-gutter) !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  .gallery-header {
+    padding-top: 1rem;
+  }
+
+  .gallery-hero-panel {
+    min-height: 14rem;
+    gap: 0.75rem;
+  }
+
+  .gallery-hero-content {
+    padding: 1.4rem 1rem 0;
+  }
+
+  .gallery-hero-content p {
+    font-size: 0.92rem;
+    line-height: 1.75;
+  }
+
+  .gallery-stats {
+    width: 5.8rem;
+    margin-left: 1rem;
+    border-radius: 12px;
+  }
+
+  .gallery-stats div {
+    padding: 0.62rem 0.75rem;
+    min-height: 2.75rem;
+  }
+
+  .gallery-stats strong {
+    font-size: 1.12rem;
+  }
+
+  .gallery-stats span {
+    font-size: 0.68rem;
+  }
+
+  .gallery-photo-wall {
+    width: 100%;
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.65rem;
+    column-gap: 0.65rem;
+    row-gap: 0.65rem;
+    columns: auto;
+  }
+
+  .photo-item.gallery-photo-card {
+    display: block;
+    min-width: 0;
+    margin: 0;
+    border-radius: 9px;
+  }
+
+  .photo-overlay {
+    padding: 2.2rem 0.7rem 0.7rem;
+  }
+}
+</style>
+
+<script data-swup-reload-script>
+  (function() {
+    function syncGalleryView() {
+      document.body.classList.toggle('gallery-view', !!document.querySelector('.gallery-page'));
+    }
+
+    syncGalleryView();
+    document.addEventListener('swup:contentReplaced', syncGalleryView);
+    document.addEventListener('DOMContentLoaded', syncGalleryView);
+
+    if (window.swup && window.swup.hooks && typeof window.swup.hooks.on === 'function') {
+      window.swup.hooks.on('page:view', syncGalleryView);
+    }
+  })();
+</script>
