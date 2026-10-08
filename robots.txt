@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://3322888.xyz/sitemap.xml
